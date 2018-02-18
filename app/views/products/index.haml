@@ -1,0 +1,17 @@
+.wrapper
+  %h1 Products
+
+  %p= link_to 'Add new', new_product_path, class: 'button'
+
+  %table
+    %thead
+      %tr
+        %th Product
+        %th Price
+        %th
+    %tbody
+      - @products.each do |product|
+        %tr
+          %td= product.title
+          %td= product.price
+          %td= link_to 'View', product_path(product)
