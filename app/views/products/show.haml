@@ -1,19 +1,12 @@
 .wrapper
   %h1= @product.title
 
-  %ul
-    %li= link_to 'Back to products', products_path
-    %li= link_to 'Edit', edit_product_path(@product)
+  %p= link_to 'Back', products_path, class: 'button'
 
-  %p
-    %dl
-      %dt Description
-      %dd= @product.description
-
-    %dl
-      %dt Price
-      %dd= @product.price
-
-    %dl
-      %dt Expiry
-      %dd= @product.expires_at
+  .card
+    .card-header= @product.title
+    .card-copy
+      %p= "$#{@product.price}"
+      %p= @product.description
+      %p= @product.expires_at
+      %p= link_to 'Edit', edit_product_path(@product), class: 'button'

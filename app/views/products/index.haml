@@ -3,15 +3,11 @@
 
   %p= link_to 'Add new', new_product_path, class: 'button'
 
-  %table
-    %thead
-      %tr
-        %th Product
-        %th Price
-        %th
-    %tbody
-      - @products.each do |product|
-        %tr
-          %td= product.title
-          %td= product.price
-          %td= link_to 'View', product_path(product)
+  .cards
+    - @products.each do |product|
+      .card
+        .card-header= product.title
+        .card-copy
+          %p= "$#{product.price}"
+          %p= product.description
+          %p= link_to 'View', product_path(product), class: 'button'

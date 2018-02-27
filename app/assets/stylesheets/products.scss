@@ -12,4 +12,25 @@ body {
 .wrapper {
   max-width: 540px;
   @include margin(null auto);
+  @include padding(null 1rem);
+}
+
+#{$all-buttons} {
+  @extend button;
+  background-color: white;
+  border: 1px solid $brown;
+  color: $brown;
+
+  &:hover {
+    background-color: $brown;
+    color: white;
+  }
+}
+
+a {
+  color: $brown;
+
+  &.button {
+    @extend button;
+  }
 }
