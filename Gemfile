@@ -8,7 +8,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.2.0.rc1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -33,9 +33,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'haml-rails'
-gem 'bourbon'
-gem 'neat'
-gem 'refills', group: :development
+gem 'bootstrap', '~> 4.0.0'
+gem 'jquery-rails'
 
 gem 'money-rails', '~>1'
 
