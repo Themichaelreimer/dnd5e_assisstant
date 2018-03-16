@@ -1,25 +1,28 @@
 = form_with model: @product, local: true do |f|
-  .wrapper
+  .container.mb-5(style="max-width: 540px")
     - if @product.errors.any?
       %p
         %ul
           - @product.errors.full_messages.each do |msg|
             %li= msg
 
-    %p
-      = f.label :title
-      = f.text_field :title, required: true
+    .form-row
+      .form-group.col-12
+        = f.label :title
+        = f.text_field :title, class: 'form-control', required: true
 
-    %p
-      = f.label :description
-      = f.text_area :description
+      .form-group.col-12
+        = f.label :description
+        = f.text_area :description, class: 'form-control'
 
-    %p
-      = f.label :price_cents
-      = f.text_field :price_cents
+      .form-group.col-12
+        = f.label :price_cents
+        = f.text_field :price_cents, class: 'form-control'
 
-    %p
-      = f.label :expires_at
-      = f.date_select :expires_at
+      .form-group.col-12
+        = f.label :expires_at
+        .form-row
+          = f.date_select :expires_at, { use_short_month: true, start_year: Date.today.year, end_year: Date.today.year + 1 }, class: 'form-control col ml-1 mr-1', required: true
 
-    %p= f.submit 'Save'
+      .form-group.col-12
+        = f.submit 'Save', class: 'btn btn-outline-primary'
