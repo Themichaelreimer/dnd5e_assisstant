@@ -4,9 +4,19 @@
 
 .container
   .card
-    .card-header= @product.title
+    .card-header
+      = @product.title
+      %p= @product.photos.attached?
     .card-copy
       %p= "$#{@product.price}"
       %p= @product.description
       %p= @product.expires_at
-      %p= link_to 'Edit', edit_product_path(@product), class: 'button'
+
+      - @product.photos.attached?
+      %ul
+        - @product.photos.each do |p|
+          %li= image_tag url_for(p)
+
+      %p
+        = link_to 'Edit', edit_product_path(@product), class: 'btn btn-outline-primary'
+        = link_to 'Delete', product_path(@product), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Are you sure?' }
