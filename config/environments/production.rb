@@ -91,4 +91,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.basic_auth_user = ENV['BASIC_AUTH_USER']
+  config.basic_auth_pass = ENV['BASIC_AUTH_PASS']
 end
