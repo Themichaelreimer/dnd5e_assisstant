@@ -1,8 +1,8 @@
-.wrapper
+.jumbotron
   %h1= @product.title
+  %p= link_to 'Back', products_path, class: 'btn btn-outline-dark'
 
-  %p= link_to 'Back', products_path, class: 'button'
-
+.container
   .card
     .card-header= @product.title
     .card-copy
