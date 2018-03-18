@@ -94,4 +94,6 @@ Rails.application.configure do
 
   config.basic_auth_user = ENV['BASIC_AUTH_USER']
   config.basic_auth_pass = ENV['BASIC_AUTH_PASS']
+
+  config.action_mailer.default_url_options = { host: 'https://marko-ror.herokuapp.com', port: 3000 }
 end
