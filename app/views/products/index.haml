@@ -2,12 +2,16 @@
   %h1 Products
   %p= link_to 'Add new', new_product_path, class: 'btn btn-outline-dark'
 
-.container
+.container-fluid
   .card-columns
     - @products.each do |product|
       .card
-        .card-header= product.title
-        .card-copy
-          %p= "$#{product.price}"
-          %p= product.description
-          %p= link_to 'View', product_path(product), class: 'button'
+        - if product.photos.attached?
+          .card-img-top
+            .photo-wrapper
+              %div= image_tag product.photos.first.variant(resize: '320x320')
+        .card-body
+          %h5.card-title= product.title
+          %h6.card-subtitle.mb-2= "$#{product.price}"
+          %p.card-text= product.description
+          = link_to 'View', product_path(product), class: 'button'

@@ -1,12 +1,17 @@
 .jumbotron
   %h1= @product.title
-  %p= link_to 'Back', products_path, class: 'btn btn-outline-dark'
+  %p= link_to 'Back', root_path, class: 'btn btn-outline-dark'
 
-.container
+.container.mb-5(style="max-width: 540px")
   .card
-    .card-header= @product.title
-    .card-copy
-      %p= "$#{@product.price}"
-      %p= @product.description
-      %p= @product.expires_at
-      %p= link_to 'Edit', edit_product_path(@product), class: 'button'
+    .card-body
+      %h5.card-title= @product.title
+      %h6.card-subtitle.mb-2= "$#{@product.price}"
+      %p.card-text= @product.description
+      %p.hidden= @product.expires_at
+
+      = render 'photos_grid'
+
+      %p.hidden
+        = link_to 'Edit', edit_product_path(@product), class: 'btn btn-outline-primary'
+        = link_to 'Delete', product_path(@product), class: 'btn btn-outline-danger', method: :delete, data: { confirm: 'Are you sure?' }

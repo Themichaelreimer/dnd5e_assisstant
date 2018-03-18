@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: marko-ror_production
-  username: marko-ror
-  password: <%= ENV['MARKO-ROR_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

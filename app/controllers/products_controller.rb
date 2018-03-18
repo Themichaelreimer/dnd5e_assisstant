@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  http_basic_authenticate_with :name => Rails.application.config.basic_auth_user, :password => Rails.application.config.basic_auth_pass if Rails.env.production?
+
   def index
     @products = Product.all
   end
@@ -36,8 +38,15 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+
+    redirect_to root_path
+  end
+
   private
     def product_params
-      params.require(:product).permit(:title, :description, :price_cents, :expires_at)
+      params.require(:product).permit(:title, :description, :price_cents, :expires_at, photos: [])
     end
 end
