@@ -4,4 +4,4 @@
       %li
         .photo-wrapper
           %div
-            = image_tag url_for(p)
+            = image_tag p.variant(resize: '150x150')

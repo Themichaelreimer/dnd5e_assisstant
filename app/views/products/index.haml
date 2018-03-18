@@ -9,7 +9,7 @@
         - if product.photos.attached?
           .card-img-top
             .photo-wrapper
-              %div= image_tag url_for(product.photos.first)
+              %div= image_tag product.photos.first.variant(resize: '320x320')
         .card-body
           %h5.card-title= product.title
           %h6.card-subtitle.mb-2= "$#{product.price}"
