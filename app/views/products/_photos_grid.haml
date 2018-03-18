@@ -1,0 +1,7 @@
+- if @product.photos.attached?
+  %ul.photos
+    - @product.photos.each do |p|
+      %li
+        .photo-wrapper
+          %div
+            = image_tag url_for(p)
