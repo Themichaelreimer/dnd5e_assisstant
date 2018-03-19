@@ -18,4 +18,7 @@
     = f.password_field :password_confirmation, autocomplete: "off"
   .actions
     = f.submit "Sign up"
+
+= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: 'btn'
+
 = render "devise/shared/links"

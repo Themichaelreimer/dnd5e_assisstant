@@ -62,3 +62,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "aws-sdk-s3", require: false
 gem 'mini_magick'
 gem 'devise'
+
+# User Authentication with Facebook
+gem 'omniauth-facebook'

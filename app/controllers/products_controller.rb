@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   http_basic_authenticate_with :name => Rails.application.config.basic_auth_user, :password => Rails.application.config.basic_auth_pass if Rails.env.production?
 
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @products = Product.all
   end
