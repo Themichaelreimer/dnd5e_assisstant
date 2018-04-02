@@ -1,9 +1,9 @@
 .jumbotron
   %h2 Log in
 
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .container.mb-5(style="max-width: 540px")
-    .form-row.mb-3
+.container.mb-5(style="max-width: 320px")
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .form-row
       .form-group.col-12
         = f.label :email
         = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control'
@@ -18,6 +18,6 @@
             = f.check_box :remember_me, class: 'form-check-input'
             = f.label :remember_me
 
-      = f.submit 'Log in', class: 'btn btn-outline-primary btn-lg btn-block'
+    = f.submit 'Log in', class: 'btn btn-outline-primary btn-lg btn-block mb-3'
 
     = render 'devise/shared/links'
