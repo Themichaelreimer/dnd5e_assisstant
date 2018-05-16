@@ -13,6 +13,14 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
+    %ul.nav.justify-content-end
+      - if user_signed_in?
+        %li
+          = link_to 'Logout', destroy_user_session_path, method: :delete
+      - else
+        %li
+          = link_to 'Login', new_user_session_path
+
     - if notice.present?
       .alert.alert-warning
         = notice
