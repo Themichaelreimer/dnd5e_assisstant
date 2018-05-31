@@ -11,6 +11,10 @@
         = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control'
 
       .form-group.col-12
+        = f.label :stand_name
+        = f.text_field :stand_name, autocomplete: 'off', class: 'form-control'  
+
+      .form-group.col-12
         = f.label :password
         = f.password_field :password, autocomplete: 'off', class: 'form-control'
         - if @minimum_password_length
