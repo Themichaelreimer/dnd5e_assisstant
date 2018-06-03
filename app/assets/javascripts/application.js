@@ -12,9 +12,8 @@
 //
 //= require jquery3
 //= require jquery.raty
-
 //= require rails-ujs
-//= require turbolinks
+// removed 'require turbolinks'; caused loading issues for letsrate
 //= require_tree .
 //= require popper
 //= require bootstrap.min

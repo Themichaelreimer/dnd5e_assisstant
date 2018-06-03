@@ -1,3 +1,6 @@
+-content_for :javascript_includes do
+  = javascript_include_tag 'jquery.raty.js', 'letsrate.js'
+
 .jumbotron
   %h1 Products
   %p= link_to 'Add new', new_product_path, class: 'btn btn-outline-dark'
@@ -12,6 +15,8 @@
               %div= image_tag product.photos.first.variant(resize: '320x320')
         .card-body
           %h5.card-title= product.title
+          %h5= link_to product.user.stand_name, user_path(product.user)
+          %p= rating_for product.user, 'rating', half_show: true, readonly: true
           %h6.card-subtitle.mb-2= "$#{product.price}"
           %p.card-text= product.description
           = link_to 'View', product_path(product), class: 'button'

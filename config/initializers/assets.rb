@@ -15,4 +15,5 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 #For ratyrate gem
 Rails.application.config.assets.precompile += %w( jquery.raty.js )
+Rails.application.config.assets.precompile += %w( ratyrate.js )
 Rails.application.config.assets.precompile += %w( letsrate.js )

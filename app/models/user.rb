@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :products, dependent: :destroy
 
+
   ratyrate_rateable "rating"
   ratyrate_rater
 
