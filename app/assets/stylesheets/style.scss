@@ -1,0 +1,35 @@
+.card{
+  background:url("d20bg.jpg");
+  background-color: yellow;
+  background-repeat: repeat;
+  margin: 32px;
+  padding-bottom: 16px;
+  transition: 0.3s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.card.img{
+  border-width: 8px;
+}
+
+.card:hover{
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+}
+
+.card-header{
+  text-align: center;
+}
+
+.card-body{
+  text-align: center;
+  border-radius: 5px;
+  border-color: black;
+}
+
+.card-container{
+  background-color: black;
+  border-width: thick;
+}
+
+body{
+
+}

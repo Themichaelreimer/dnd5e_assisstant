@@ -26,11 +26,7 @@ module ApplicationHelper
 
   # Returns value of parsed expression if it's valid. nil otherwise
   def try_eval(expr)
-    begin
-      eval_expr
-    rescue
-      nil
-    end
+      eval_expr(expr)
   end
 
   def eval_expr(expr)

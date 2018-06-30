@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_07_161042) do
+ActiveRecord::Schema.define(version: 2018_06_29_220912) do
 
   create_table "actors", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -34,6 +34,26 @@ ActiveRecord::Schema.define(version: 2018_06_07_161042) do
     t.string "abilities"
     t.integer "challenge"
     t.integer "cur_hp"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer "user_id"
+  end
+
+  create_table "favorite_pairs", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "template_id"
+    t.index ["template_id"], name: "index_favorite_pairs_on_template_id"
+    t.index ["user_id"], name: "index_favorite_pairs_on_user_id"
+  end
+
+  create_table "favorite_templates", force: :cascade do |t|
+    t.index [nil], name: "index_favorite_templates_on_template_id"
+  end
+
+  create_table "favorite_users", force: :cascade do |t|
+    t.index [nil], name: "index_favorite_users_on_user_id"
   end
 
   create_table "templates", force: :cascade do |t|
@@ -57,6 +77,15 @@ ActiveRecord::Schema.define(version: 2018_06_07_161042) do
     t.string "languages"
     t.string "abilities"
     t.integer "challenge"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "templates_users", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "template_id", null: false
   end
 
   create_table "users", force: :cascade do |t|

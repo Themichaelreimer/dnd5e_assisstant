@@ -1,0 +1,43 @@
+<div class="card border-primary mb-3 col-md-4" style="width:600px;">
+
+  <div class="card-header">
+    <h4 class="card-title"><%=@template.name%> </h4>
+    <h5 class="card-subtitle mb-2 text-muted"><%= @template.desc%>, Lv: <%=@template.challenge%></h5>
+  </div>
+
+  <div class = "card-body">
+
+    <%= image_tag(@template.image.url(:large), class:'card-img-top;center')%>
+
+    <div class="row">
+      <h5 class="col-md-4">HP: <%= @template.hp_s %></h5>
+      <h5 class="col-md-4">AC: <%= @template.ac_s %></h5>
+      <h5 class="col-md-4">Speed: <%= @template.speed %></h5>
+    </div>
+
+    <div class="row">
+      <h5 class="col-md-2">STR: <%= @template.str_s %></h5>
+      <h5 class="col-md-2">DEX: <%= @template.dex_s %></h5>
+      <h5 class="col-md-2">CON: <%= @template.con_s %></h5>
+      <h5 class="col-md-2">INT: <%= @template.int_s %></h5>
+      <h5 class="col-md-2">WIS: <%= @template.wis_s %></h5>
+      <h5 class="col-md-2">CHA: <%= @template.cha_s %></h5>
+    </div>
+
+    <div>
+      <h3>Actions</h3>
+      <%= @template.actions%>
+    </div>
+
+    <div>
+      <h3>Saving Throws</h3>
+      <%= @template.saving_throws%>
+    </div>
+
+    <div class="row">
+      
+    </div>
+
+    <a href="#" class="btn btn-primary">Favourite</a> <a href="#" class="btn btn-primary">Spawn</a>
+  </div>
+</div>

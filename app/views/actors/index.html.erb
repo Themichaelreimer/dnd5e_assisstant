@@ -1,0 +1,10 @@
+
+<h1> Monsters </h1>
+
+<div class="container-fluid row" style="width:90%;background-color:white;">
+  <div >
+    <% @actors.each do |actor|%>
+        <%= render partial: 'actors', locals: {actor: actor}%>
+    <% end %>
+  </div>
+</div>

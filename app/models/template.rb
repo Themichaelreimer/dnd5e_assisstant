@@ -23,4 +23,7 @@ class Template < ApplicationRecord
   #add_column :templates, :abilities, :string
 
   #add_column :templates, :challenge, :integer
+  has_and_belongs_to_many :users
+  has_attached_file :image, styles:{small: "64x64!", med:"256x256!", large: "512x512!"}
+  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 end

@@ -1,0 +1,22 @@
+<div class="card border-primary mb-3 col-md-4" style="width:300px;">
+
+  <div class="card-header">
+    <h4 class="card-title"><%=actor.name%> </h4>
+    <h5 class="card-subtitle mb-2 text-muted">Lv: <%=actor.challenge%></h5>
+  </div>
+
+  <div class = "card-body">
+
+    <% if actor.cur_hp == 0 %>
+      <%= image_tag(actor.image.url(:med), class:'card-img-top;center;greyscale')%>
+    <% else %>
+      <%= image_tag(actor.image.url(:med), class:'card-img-top;center')%>
+    <% end %>
+    <h5>HP: <%= actor.cur_hp %> (Max: <%=actor.hp%>)</h5>
+    <h5>AC: <%= actor.ac%></h5>
+
+    <%= link_to "Inspect", actor, class: "btn btn-primary" %> <%= link_to "Remove", actor, method: :delete, class: "btn btn-primary"%>
+
+    <%= render partial: 'damage_form', locals: {actor: actor}%>
+  </div>
+</div>
